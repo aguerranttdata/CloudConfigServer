@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.group7</groupId>
-    <artifactId>CloudConfigServer</artifactId>
+    <artifactId>cloud-config-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>CloudConfigServer</name>
     <description>CloudConfigServer</description>
@@ -56,6 +56,12 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <image>
+                        <name>renatogm24/ntt-${project.artifactId}:${project.version}</name>
+                    </image>
+                    <pullPolicy>IF_NOT_PRESENT</pullPolicy>
+                </configuration>
             </plugin>
         </plugins>
     </build>
