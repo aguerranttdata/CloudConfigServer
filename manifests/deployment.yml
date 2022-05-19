@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudconfigserver
+  labels:
+    app: sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: cloudconfigserver
+  template:
+    metadata:
+      labels:
+        app: sample-app
+        service: cloudconfigserver
+    spec:
+      containers:
+        - name: webapp
+          image: cloudconfigserver.azurecr.io/cloudconfigserver:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8888
+              protocol: TCP
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:8888
+            - name: WebApiBaseAddress
+              value: http://webapi
