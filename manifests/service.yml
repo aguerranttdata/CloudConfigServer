@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: cloudconfigserver
   labels:
-    app: sample-app
+    app: cloudconfigserver
     service: cloudconfigserver
 spec:
   type: LoadBalancer
