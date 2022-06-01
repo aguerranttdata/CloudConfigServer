@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cloudconfigserver
+  name: asguconfigserver
   labels:
-    app: cloudconfigserver
+    app: asguconfigserver
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: cloudconfigserver
+      service: asguconfigserver
   template:
     metadata:
       labels:
-        app: cloudconfigserver
-        service: cloudconfigserver
+        app: asguconfigserver
+        service: asguconfigserver
     spec:
       containers:
         - name: webapp
-          image: cloudconfigserver.azurecr.io/cloudconfigserver:v1
+          image: asguconfigserver.azurecr.io/asguconfigserver:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8888

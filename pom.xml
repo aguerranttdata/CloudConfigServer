@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.group7</groupId>
-    <artifactId>cloud-config-server</artifactId>
+    <artifactId>asguconfigserver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>CloudConfigServer</name>
     <description>CloudConfigServer</description>

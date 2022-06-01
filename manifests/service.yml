@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cloudconfigserver
+  name: asguconfigserver
   labels:
-    app: cloudconfigserver
-    service: cloudconfigserver
+    app: asguconfigserver
+    service: asguconfigserver
 spec:
   type: LoadBalancer
   ports:
@@ -12,4 +12,4 @@ spec:
       targetPort: 8888
       protocol: TCP
   selector:
-    service: cloudconfigserver
+    service: asguconfigserver
